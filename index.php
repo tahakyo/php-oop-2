@@ -23,12 +23,14 @@ error_reporting(E_ALL);
 
     // Users
 
-    $taha = new user("Taha", "Ghazouani", "taha@gmail.com", "true", "true");
+    $taha = new user("Taha", "Ghazouani", "taha@gmail.com", true, true);
     $taha-> addToCart($catFood);
     $taha-> addToCart($catToy);
     $taha-> addToCart($dogAccessory);
     // var_dump($taha);
-
+    $casualMember = new user("aassd", "aaawwwq", "dsadasd@mail.com", false, false);
+    $casualMember-> addToCart($dogFood);
+    $casualMember-> addToCart($catFood);
 
     
 ?>
@@ -51,8 +53,9 @@ error_reporting(E_ALL);
     </ul>
   </body>
   </section>
+  <!-- Cliente registrato -->
   <section>
-    <h1>Carrello cliente</h1>
+    <h1>Carrello cliente <?php echo $taha->getUserInfo() ?></h1>
     <ul>
       <?php foreach($taha->cart as $cartItem) { ?>
         <li><?php echo $cartItem->getInfo(); ?></li>
@@ -61,5 +64,17 @@ error_reporting(E_ALL);
     </ul>
     <h3>Totale acquisti: € <?php echo $taha->getTotalPrice() ?> </h3>
     <h3>Metodo di pagamento: <?php echo $taha->paymentCheck() ?></h3>
+  </section>
+  <!-- cliente non registrato -->
+  <section>
+  <h1>Carrello cliente <?php echo $casualMember->getUserInfo() ?></h1>
+    <ul>
+      <?php foreach($casualMember->cart as $cartItem) { ?>
+        <li><?php echo $cartItem->getInfo(); ?></li>
+        
+      <?php } ?>
+    </ul>
+    <h3>Totale acquisti: € <?php echo $casualMember->getTotalPrice() ?> </h3>
+    <h3>Metodo di pagamento: <?php echo $casualMember->paymentCheck() ?></h3>
   </section>
 </html>
