@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 
     // Users
 
-    $taha = new user("Taha", "Ghazouani", "taha@gmail.com", "false", "true");
+    $taha = new user("Taha", "Ghazouani", "taha@gmail.com", "true", "true");
     $taha-> addToCart($catFood);
     $taha-> addToCart($catToy);
     $taha-> addToCart($dogAccessory);
@@ -60,5 +60,6 @@ error_reporting(E_ALL);
       <?php } ?>
     </ul>
     <h3>Totale acquisti: € <?php echo $taha->getTotalPrice() ?> </h3>
+    <h3>Metodo di pagamento: <?php echo $taha->paymentCheck() ?></h3>
   </section>
 </html>

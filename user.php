@@ -4,7 +4,7 @@
       public $lastName;
       public $mail;
       public $cart = [];
-      public $cc_expired = false;
+      public $cc_valid = false;
       public $membership = false;
       public $discount = 0.2;
 
@@ -40,6 +40,13 @@
           return $total_price - ($total_price * $this->discount);
         }else {
           return $total_price;
+        }
+      }
+      function paymentCheck() {
+        if($this->cc_valid = true) {
+          return "Pagamento effetutato con successo tramite carta di credito";
+        }else {
+          return "Transazione negata: Carta di credito non valida";
         }
       }
     }
