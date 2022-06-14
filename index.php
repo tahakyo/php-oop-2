@@ -23,7 +23,11 @@ error_reporting(E_ALL);
 
     // Users
 
-    $taha = new user("Taha", "Ghazouani", "taha@gmail.com");
+    $taha = new user("Taha", "Ghazouani", "taha@gmail.com", "false", "true");
+    $taha-> addToCart($catFood);
+    $taha-> addToCart($catToy);
+    $taha-> addToCart($dogAccessory);
+    // var_dump($taha);
 
 
     
@@ -37,12 +41,24 @@ error_reporting(E_ALL);
   <title>Document</title>
 </head>
 <body>
-  <h1>Lista prodotti:</h1>
-  <ul>
-    <li><?php echo $catFood->getInfo()?></li>
-    <li><?php echo $dogFood->getInfo()?></li>
-    <li><?php echo $catToy->getInfo()?></li>
-    <li><?php echo $dogAccessory->getInfo()?></li>
-  </ul>
-</body>
+  <section>
+    <h1>Lista prodotti:</h1>
+    <ul>
+      <li><?php echo $catFood->getInfo()?></li>
+      <li><?php echo $dogFood->getInfo()?></li>
+      <li><?php echo $catToy->getInfo()?></li>
+      <li><?php echo $dogAccessory->getInfo()?></li>
+    </ul>
+  </body>
+  </section>
+  <section>
+    <h1>Carrello cliente</h1>
+    <ul>
+      <?php foreach($taha->cart as $cartItem) { ?>
+        <li><?php echo $cartItem->getInfo(); ?></li>
+        
+      <?php } ?>
+    </ul>
+    <h3>Totale acquisti: € <?php echo $taha->getTotalPrice() ?> </h3>
+  </section>
 </html>
