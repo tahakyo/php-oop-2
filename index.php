@@ -9,7 +9,9 @@ error_reporting(E_ALL);
 
 <?php
     require_once __DIR__. "/product.php";
-    // $royal_canin = new product("Royal canin", "80g", 1);
+    require_once __DIR__. "/food.php";
+    $royal_canin = new food("Royal canin", "umido per gatti", 1);
+    var_dump($royal_canin)
     // echo $royal_canin->getInfo();
 ?>
 <!DOCTYPE html>
