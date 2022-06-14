@@ -14,5 +14,8 @@
         $this->lastName = $_lastName;
         $this->mail = $_mail;
       }
+      function addToCart($_product) {
+        $this->cart[] = $_product;
+      }
     }
 ?>

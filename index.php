@@ -23,7 +23,8 @@ error_reporting(E_ALL);
 
     // Users
 
-    
+    $taha = new user("Taha", "Ghazouani", "taha@gmail.com");
+
 
     
 ?>
@@ -36,8 +37,12 @@ error_reporting(E_ALL);
   <title>Document</title>
 </head>
 <body>
-  <?php
-      
-  ?>
+  <h1>Lista prodotti:</h1>
+  <ul>
+    <li><?php echo $catFood->getInfo()?></li>
+    <li><?php echo $dogFood->getInfo()?></li>
+    <li><?php echo $catToy->getInfo()?></li>
+    <li><?php echo $dogAccessory->getInfo()?></li>
+  </ul>
 </body>
 </html>
