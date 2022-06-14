@@ -1,16 +1,16 @@
 <?php
   class product {
     public $brand;
-    public $weight;
+    public $description;
     public $price;
 
-    function __construct($_brand, $_weight, $_price) {
+    function __construct($_brand, $_description, $_price) {
       $this->brand = $_brand;
-      $this->weight = $_weight;
+      $this->description = $_description;
       $this->price = $_price;
     }
     public function getInfo(){
-      return "$this->brand <br> $this->weight <br> $this->price €";
+      return "$this->brand <br> $this->description <br> $this->price €";
     }
   }
 ?>
